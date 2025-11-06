@@ -20,8 +20,8 @@
       <div class="book-list"></div>
     </div>
 
-    <dialog>
-      <button class="close" autofocus><img src="./images/close.svg" alt=""></button>
+    <dialog id="dialog">
+      <button id="close" autofocus><img src="./images/close.svg" alt="Close"></button>
       <form action="#" class="new">
         <div>
 					<label for="title">Title</label>
@@ -35,14 +35,16 @@
 					<label for="pages">Pages</label>
 					<input type="text" name="pages" id="pages">
 				</div>
-				<div>
-					<label for="myCheckbox">Read</label>
-					<input type="checkbox" name="check" id="check">
-				</div>
+				<fieldset>
+					<legend>Have you read it yet?</legend>
+					<label for="read"><input type="radio" name="readStatus" value="read" required id="read">Yes</label>
+          <label for="read"><input type="radio" name="readStatus" value="notYet" id="read">Not yet</label>
+				</fieldset>
+
 				<button id="createNewBook">Submit</button>
         </form>
     </dialog>
     </div>
-    <button id="add">Add a new Book</button>
+    <button id="add">Add A New Book</button>
 </body>
 </html>

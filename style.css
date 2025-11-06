@@ -1,5 +1,7 @@
 :root {
   --scarlet-color: #c8000a;
+  --deep-blue-color: #344d90;
+  --white-color: #fff;
 }
 
 body {
@@ -9,7 +11,7 @@ body {
 h1 {
 	font-size: 3rem;
 	text-align: center;
-	color: var(--random-color);
+	color: var(--scarlet-color);
 }
 
 .row {
@@ -19,4 +21,16 @@ h1 {
 
 .row > p {
 	font-size: 2rem;
+}
+
+#add {
+	background-color: var(--deep-blue-color);
+	color: var(--white-color);
+	padding: 15px 30px;
+	border-radius: 10px;
+}
+
+button > img {
+	width: 1.5rem;
+	height: 1.5rem;
 }

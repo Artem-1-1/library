@@ -1,15 +1,22 @@
 const myLibrary = [];
 
-const newBook = document.getElementById('add');
+const dialog = document.getElementById("dialog");
+const showButton = document.getElementById("add");
+const closeButton = document.getElementById("close");
 
-newBook.addEventListener('click', () => {
-  addBookToLibrary();
+showButton.addEventListener("click", () => {
+  dialog.showModal();
 })
 
-function Book(id, title, author, pages, read='not read yet') {
+closeButton.addEventListener("click", () => {
+  dialog.close();
+})
+
+function Book(title, author, pages, read) {
   if (!new.target) {
     throw Error("You must use the 'new' operator to call the constructor");
   }
+  this.id = self.crypto.randomUUID();
   this.title = title;
   this.author = author;
   this.pages = pages;
@@ -18,24 +25,29 @@ function Book(id, title, author, pages, read='not read yet') {
     title : `${this.title}`,
     author : `${this.author}`,
     pages : `${this.pages}`,
-    read : `${this.read}`
+    read : this.read ? "read" : "not yet",
   }
   return book
 }
 
-function uniqueId() {
-  return self.crypto.randomUUID();
+function addBookToLibrary() {
+  const newBook = new Book(title, author, pages, read);
+  myLibrary.push(newBook);
 }
 
-function addBookToLibrary() {
-  let id = uniqueId();
-  let title = prompt('Enter a title of book.');
-  let author = prompt('Enter a author of book.');
-  let pages = prompt('Enter a number of pages in book.');
-  let read = prompt('You read this book or not yet?');
-  if (read === '') {
-    read = 'not yet read';
-  }
-  book = new Book(id, title, author, pages, read);
-  myLibrary.push(book);
-}
+function createBookCard(book) {
+  const bookCard = document.createElement('div');
+  bookCard.classList.add('bookCard')
+
+  const titleRow = document.createElement('p');
+  titleRow.textContent = `${book.title}`;
+
+  const authorRow = document.createElement('p');
+  authorRow.textContent = `${book.author}` 
+
+  const pagesRow = document.createElement('p');
+  pagesRow.textContent = `${book.pages}`
+
+  const readStatusRow = document.createElement('p');
+  readStatusRow.textContent = `${book.read ? "Read" : "Not yet"}`
+} 
