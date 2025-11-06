@@ -1,0 +1,22 @@
+:root {
+  --scarlet-color: #c8000a;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+	font-size: 3rem;
+	text-align: center;
+	color: var(--random-color);
+}
+
+.row {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.row > p {
+	font-size: 2rem;
+}
