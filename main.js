@@ -4,7 +4,7 @@ const dialog = document.getElementById("dialog");
 const showButton = document.getElementById("add");
 const closeButton = document.getElementById("close");
 const bookList = document.getElementById("book-list");
-const submitButton = document.getElementById("submit");
+// const submitButton = document.getElementById("submit");
 const form = document.getElementById("form"); 
 
 showButton.addEventListener("click", () => {
@@ -15,7 +15,7 @@ closeButton.addEventListener("click", () => {
   dialog.close();
 })
 
-submitButton.addEventListener("click", (e) => {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
   dialog.close();
 
@@ -28,7 +28,7 @@ submitButton.addEventListener("click", (e) => {
 
   form.reset();
   dialog.close();
-})
+});
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -39,8 +39,8 @@ function Book(title, author, pages, read) {
   this.info = function() {
   const readStatus = this.read ? "read" : "not yet";
     return `${title} ${author} ${pages} pages, ${readStatus}, ${id} `
- }
-}
+ };
+};
 
 function addBookToLibrary(title, author, pages, read) {
   const newBook = new Book(title, author, pages, read);
