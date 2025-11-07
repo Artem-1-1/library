@@ -4,7 +4,6 @@ const dialog = document.getElementById("dialog");
 const showButton = document.getElementById("add");
 const closeButton = document.getElementById("close");
 const bookList = document.getElementById("book-list");
-// const submitButton = document.getElementById("submit");
 const form = document.getElementById("form"); 
 
 showButton.addEventListener("click", () => {
