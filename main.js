@@ -77,10 +77,10 @@ function createBookCard(book) {
   })
 
   const removeButton = document.createElement("button");
+  removeButton.classList.add("remove");
   removeButton.textContent = "Remove"
   removeButton.addEventListener("click", function() {
-    bookCard.remove();
-    removeButton.classList.add('remove');
+  bookCard.remove();
   });
 
   bookCard.dataset.bookId = book.id;
