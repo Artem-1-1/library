@@ -29,17 +29,19 @@ form.addEventListener("submit", (e) => {
   dialog.close();
 });
 
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-  this.id = self.crypto.randomUUID();
-  this.info = function() {
-  const readStatus = this.read ? "read" : "not yet";
-    return `${title} ${author} ${pages} pages, ${readStatus}, ${id} `
- };
-};
+class Book{
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+    this.id = self.crypto.randomUUID();
+  }
+  bookInformation() {
+    const readStatus = this.read ? "read" : "not yet";
+    return `${this.title} ${this.author} ${this.pages} pages, ${readStatus}, ${this.id} `
+  }
+} 
 
 function addBookToLibrary(title, author, pages, read) {
   const newBook = new Book(title, author, pages, read);
