@@ -39,7 +39,7 @@ class Book{
   }
   bookInformation() {
     const readStatus = this.read ? "read" : "not yet";
-    return `${this.title} ${this.author} ${this.pages} pages, ${readStatus}, ${this.id} `
+    return `Title: ${this.title}\n Author: ${this.author}\n Pages: ${this.pages} pages\n Read:${readStatus}\n BookId:${this.id} `
   }
 } 
 
